@@ -77,15 +77,36 @@ for(let i = 0; i < inventory.length; i++){
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-let carModels = [];
 
-for(let i = 0; i < inventory.length; i++){
-  let carModel = inventory[i].car_model;
-  carModels.push(carModel);
-  carModels.sort();
-}
+//FOR LOOP -------------------------------------------
+// let carModels = [];
+// for(let i = 0; i < inventory.length; i++){
+//   let carModel = inventory[i].car_model;
+//   carModels.push(carModel);
+//   carModels.sort();
+// }
+// console.log(carModels.join("\n"));
 
+//FOREACH LOOP ---------------------------------------
+// let carModels = [];
+// inventory.forEach(function (carModel){
+//   carModels.push(carModel.car_model);
+//   carModels.sort();
+// });
+// console.log(carModels.join("\n"));
+
+//.MAP -----------------------------------------------
+// let carModels = inventory.map(function (carModel){
+//   return carModel.car_model
+// });
+// carModels.sort();
+// console.log(carModels.join("\n"));
+
+//.MAP ARROW FUNCTION---------------------------------
+let carModels = inventory.map(carModel => carModel.car_model);
+carModels.sort();
 console.log(carModels.join("\n"));
+
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
@@ -118,13 +139,12 @@ let onlyBMWandAudi;
 for(i = 0; i < inventory.length; i++){
 
   onlyBMWandAudi = inventory[i].car_make;
-  
+
   if (onlyBMWandAudi === "BMW" || onlyBMWandAudi ===  "Audi"){    
     BMWAndAudi.push(inventory[i]);
   }
 }
 console.log(JSON.stringify(BMWAndAudi));
 
-
-
+// Look at array methods like .map(), .reduce(), .filter(). use them on the data in the arrays assignment to accomplish the same things you did with the ES5 for loop.
 
